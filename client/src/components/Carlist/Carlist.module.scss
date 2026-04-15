@@ -1,0 +1,212 @@
+.container {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  box-sizing: border-box;
+  justify-content: center;
+  width: 100%;
+  padding: 1rem;
+  gap: 1rem;
+}
+
+.fullHeight {
+  height: 100%;
+}
+
+.inner {
+  box-sizing: border-box;
+  display: flex;
+  flex-direction: column;
+  width: 100%;
+  height: 100%;
+  border: 1px solid var(--text-dim);
+  border-radius: 0.25rem;
+  background-color: var(--background);
+}
+
+.headerSect {
+  display: flex;
+  flex-direction: row;
+  width: 100%;
+  justify-content: space-between;
+  align-items: center;
+  padding: 1rem;
+  box-sizing: border-box;
+  box-shadow: 0 0 20px rgba(0, 0, 0, 0.1);
+}
+
+.header {
+  display: flex;
+  font-size: 1.25rem;
+  font-weight: 600;
+  width: 100%;
+  color: var(--text-sub);
+}
+
+.addIcon {
+  cursor: pointer;
+  fill: var(--success);
+  font-size: 2rem;
+  transition: fill 0.25s ease-in-out;
+
+  &:hover {
+    fill: var(--success-hover);
+  }
+
+}
+
+.carlist {
+  display: flex;
+  width: 100%;
+  flex-direction: column;
+  overflow-y: auto;
+  max-height: 205px;
+}
+
+.fullHeight .inner {
+  height: 100%;
+}
+
+.fullHeight .carlist {
+  flex: 1;
+  max-height: none;
+  min-height: 0;
+}
+
+.carlist > :first-child {
+  border-bottom: 1px solid var(--text-dim);
+  border-top: none;
+}
+
+.carlist > :last-child {
+  border-bottom: none;
+}
+
+
+.carItem {
+  width: 100%;
+  padding: 1rem;
+  box-sizing: border-box;
+  border-bottom: 1px solid var(--text-dim);
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  width: 100%;
+  position: relative;
+}
+
+.bookingItem {
+  width: 100%;
+  padding: 1rem;
+  box-sizing: border-box;
+  border-bottom: 1px solid var(--text-dim);
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  gap: 1rem;
+}
+
+.bookingMeta,
+.bookingDetails {
+  display: flex;
+  flex-direction: column;
+  gap: 0.4rem;
+}
+
+.bookingDetails {
+  align-items: flex-end;
+  text-align: right;
+  color: var(--text-sub);
+  font-size: 0.95rem;
+}
+
+.bookingSlot {
+  color: var(--text-dim);
+  font-size: 0.85rem;
+  font-weight: 600;
+}
+
+.carTag {
+  padding: 0.25rem 0.5rem;
+  border: 1px solid var(--text-dim);
+  border-radius: 0.25rem;
+  color: var(--text-neg);
+  background-color: var(--text-sub);
+  font-weight: 800;
+}
+
+.invalid {
+  width: 100%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  box-sizing: border-box;
+  text-align: center;
+  font-size: 0.75rem;
+  color: var(--text-dim);
+  padding: 1rem;
+}
+
+.deleteIcon, .deleteIconSelected {
+  cursor: pointer;
+  fill: var(--error);
+  margin-left: auto;
+  font-size: 2rem;
+  position: relative;
+}
+
+.deleteIconSelected {
+  animation: convertColour 0.5s ease-in-out forwards;
+}
+
+@keyframes convertColour {
+  0% {
+    fill: var(--error);
+  }
+  100% {
+    fill: var(--background);
+  }
+}
+
+.backgroundDelete {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background-color: var(--error);
+  opacity: 100;
+  z-index: -1;
+  transition: opacity 0.25s ease-in-out;
+  animation: slideRight 0.25s ease-in-out;
+}
+
+@keyframes slideRight {
+  0% {
+    width: 0;
+  }
+  100% {
+    width: 100%;
+  }
+}
+
+.confirmDeleteContainer {
+  display: flex;
+  justify-content: flex-end;
+  align-items: center;
+  position: relative;
+  margin-left: auto;
+  gap: 1rem;
+}
+
+.confirmButton {
+  height: 2rem;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  padding: 0.5rem;
+  box-sizing: border-box;
+  border-radius: 0.25rem;
+  background-color: var(--background);
+  cursor: pointer;
+}

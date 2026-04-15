@@ -1,0 +1,60 @@
+.dialog {
+  position: absolute;
+  top: 0;
+  left: 0;
+  display: flex;
+  height: 100%;
+  width: 100%;
+  justify-content: center;
+  align-items: center;
+  padding: 1rem;
+  box-sizing: border-box;
+}
+
+@keyframes fadeIn {
+  from {
+    transform: scale(0.5);
+    opacity: 0;
+  }
+  to {
+    transform: scale(1);
+    opacity: 1;
+  }
+}
+
+.dialogContent {
+  position: relative;
+  display: flex;
+  flex-direction: column;
+  gap: 1rem;
+  width: 100%;
+  padding: 1rem;
+  background-color: var(--background);
+  border-radius: 0.25rem;
+  z-index: 10;
+  animation: fadeIn 0.5s ease-in-out forwards;
+}
+
+.dialogClose {
+  margin-left: auto;
+  font-size: 2rem;
+  fill: var(--error);
+  cursor: pointer;
+}
+
+.background {
+  position: absolute;
+  top: 0;
+  left: 0;
+  height: 100%;
+  width: 100%;
+  background-color: rgba(0, 0, 0, 0.5);
+  z-index: 5;
+}
+
+@media (min-width: 1024px) {
+  .dialogContent {
+    width: 600px;
+    margin: 0 auto;
+  }
+}
