@@ -4,6 +4,8 @@
 
 [Parkpal slide deck](https://docs.google.com/presentation/d/15-vk-3Y4ljg8ydnZkl3E0ZrwzirzI3DpIPLJgMz2WcE/)
 
+[Demo video](https://youtu.be/e_NDfZvptY8)
+
 ParkPal is a split client/server app:
 
 - `client/`: Next.js frontend
