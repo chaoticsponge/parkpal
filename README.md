@@ -1,5 +1,9 @@
 # ParkPal App
 
+![parkpal.png](parkpal.png)
+
+[Parkpal slide deck](https://docs.google.com/presentation/d/15-vk-3Y4ljg8ydnZkl3E0ZrwzirzI3DpIPLJgMz2WcE/)
+
 ParkPal is a split client/server app:
 
 - `client/`: Next.js frontend
@@ -34,7 +38,7 @@ Open a second terminal:
 ```bash
 cd client
 npm install
-cp .env.example .env.local
+cp .env.example .env
 npm run dev
 ```
 
@@ -48,7 +52,7 @@ Client env file:
 
 ```bash
 cd client
-cp .env.example .env.local
+cp .env.example .env
 ```
 
 Set:
