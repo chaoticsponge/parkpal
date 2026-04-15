@@ -1,5 +1,5 @@
 {
-  "name": "reachcard-app",
+  "name": "parkpal-client",
   "version": "0.7.0",
   "private": true,
   "scripts": {

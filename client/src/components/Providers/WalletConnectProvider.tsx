@@ -3,15 +3,16 @@ import { WalletAdapterNetwork } from "@solana/wallet-adapter-base";
 import { ConnectionProvider, WalletProvider } from "@solana/wallet-adapter-react";
 import { WalletModalProvider } from "@solana/wallet-adapter-react-ui";
 import { UnsafeBurnerWalletAdapter, PhantomWalletAdapter, CloverWalletAdapter, Coin98WalletAdapter, CoinbaseWalletAdapter, HuobiWalletAdapter, MathWalletAdapter, NekoWalletAdapter, NightlyWalletAdapter, SalmonWalletAdapter, SolflareWalletAdapter, TorusWalletAdapter, TrustWalletAdapter } from "@solana/wallet-adapter-wallets";
+import { clusterApiUrl } from "@solana/web3.js";
 
 const WalletWrapper = ({ children }: { children : React.ReactNode }) => {
     // Can be set to 'devnet', 'testnet', or 'mainnet-beta'
     const network = WalletAdapterNetwork.Devnet;
 
-    const endpoint = process.env.NEXT_PUBLIC_SOLANA_RPC_URL;
+    const endpoint = process.env.NEXT_PUBLIC_SOLANA_RPC_URL || clusterApiUrl("devnet");
 
-    if (!endpoint) {
-      throw new Error("Missing NEXT_PUBLIC_SOLANA_RPC_URL");
+    if (!process.env.NEXT_PUBLIC_SOLANA_RPC_URL) {
+      console.warn("Missing NEXT_PUBLIC_SOLANA_RPC_URL, falling back to Solana devnet public RPC.");
     }
   
     // @solana/wallet-adapter-wallets includes all the adapters but supports tree shaking --
